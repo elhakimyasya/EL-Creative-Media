@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Generator | EL Creative Academy</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h2 class="title">Password Generator</h2>
+		<div class="result">
+			<div class="field-title">Generated Password</div>
+			<div class="result-info right">Click to Copy</div>
+			<div class="result-info left">Copied</div>
+			<div class="result-viewbox" id="result">Generate Password</div>
+
+			<button id="copy-btn" style="--x: 0; --y: 0"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg></button>
+		</div>
+		<div class="range-slider" data-min="6" data-max="32">
+			<div class="length-title field-title" data-length="0">Length: </div>
+			<input type="range" min="6" max="32" value="16" id="slider">
+		</div>
+		<div class="settings">
+			<span class="field-title">Settings</span>
+			<div class="setting">
+				<input type="checkbox" id="uppercase" checked>
+				<label for="uppercase">Include Uppercase</label>
+			</div>
+
+			<div class="setting">
+				<input type="checkbox" id="lowercase" checked>
+				<label for="lowercase">Include Lowercase</label>
+			</div>
+
+			<div class="setting">
+				<input type="checkbox" id="number" checked>
+				<label for="number">Include Numbers</label>
+			</div>
+
+			<div class="setting">
+				<input type="checkbox" id="symbol" checked>
+				<label for="symbol">Include Symbols</label>
+			</div>
+		</div>
+
+		<button class="generate" id="generate">Generate Password</button>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
