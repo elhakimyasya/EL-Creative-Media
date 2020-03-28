@@ -1,0 +1,61 @@
+* {
+	user-select: none;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+#buttons {
+	position: relative;
+	display: block;
+	width: 700px;
+	height: 350px;
+	background-color: #ff0000;
+	border-radius: 350px;
+	cursor: pointer;
+	transform: scale(0.5);
+}
+
+.knob {
+	width: 290px;
+	height: 290px;
+	background-image: url(images/index.jpg);
+	background-size: 700px;
+	position: relative;
+	top: 30px;
+	left: 30px;
+	border-radius: 290px;
+	transition: 0.4s ease left, 0.4s ease background-position;
+	z-index: 2;
+}
+
+.subs,
+.thank {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #fff;
+	font-size: 58px;
+	font-weight: 700;
+	font-family: 'Product Sans', sans-serif;
+	margin-left: 389px;
+	z-index: 1;
+}
+
+.thank {
+	margin-left: 30px;
+}
+
+#checkbox:checked + #buttons .knob {
+	left: 380px;
+	background-position: -350px 0;
+}
