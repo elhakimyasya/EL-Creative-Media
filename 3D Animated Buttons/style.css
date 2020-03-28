@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Product Sans', sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	min-height: 100vh;
+	background: #fff;
+}
+
+button {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button.mybuttons {
+	font-weight: 600;
+	color: #222a38;
+	text-transform: uppercase;
+	padding: 1.25em 2em;
+	background: #f0f3ff;
+	border: 2px solid #8588b1;
+	border-radius: 0.75em;
+	transform-style: preserve-3d;
+	transition: background 150ms cubic-bezier(0, 0, 0.58, 1), 
+	-webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), 
+	background 150ms cubic-bezier(0, 0, 0.58, 1);
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), 
+	background 150ms cubic-bezier(0, 0, 0.58, 1),
+	-webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.mybuttons::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #c6c4f9;
+	border-radius: inherit;
+	box-shadow: 0 0 0 2px #8588b1, 0 0.625em 0 0 #e2e2ff;
+	transform: translate3d(0, 0.75em, -1em);
+	transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), 
+	-webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), 
+	box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), 
+	box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+	-webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.mybuttons:hover {
+	background: #ebf9ff;
+	transform: translate(0, 0.25em);
+}
+
+button.mybuttons:hover::before {
+	box-shadow: 0 0 0 2px #8588b1, 0 0.5em 0 0 #e2e2ff;
+	transform: translate3d(0, 0.5em, -1em);
+}
+
+button.mybuttons:active {
+	background: #ebf9ff;
+	transform: translate(0, 0.75em);
+}
+
+button.mybuttons:active::before {
+	box-shadow: 0 0 0 2px #8588b1, 0 0.5em 0 0 #e2e2ff;
+	transform: translate3d(0, 0, -1em);
+}
