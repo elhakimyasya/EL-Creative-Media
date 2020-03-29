@@ -13,10 +13,19 @@ body {
 h2 {
 	line-height: 1.5;
 	display: inline;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, #ffe1e1), color-stop(85%, #ffb0b0), color-stop(50%, transparent), to(transparent));
+	background-image: -o-linear-gradient(transparent 50%, #ffe1e1 50%, #ffb0b0 85%, transparent 50%, transparent 100%);
 	background-image: linear-gradient(transparent 50%, #ffe1e1 50%, #ffb0b0 85%, transparent 50%, transparent 100%);
 	background-repeat: no-repeat;
 	background-size: 0% 100%;
-	animation: animations cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards infinite;
+	-webkit-animation: animations cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards infinite;
+	        animation: animations cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards infinite;
+}
+
+@-webkit-keyframes animations {
+	to {
+		background-size: 100% 100%;
+	}
 }
 
 @keyframes animations {
