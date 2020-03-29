@@ -1,11 +1,19 @@
 body {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: 100vh;
 }
 
 .clock {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -19,7 +27,8 @@ body {
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 10px;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+	        box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .digital::before,
@@ -31,7 +40,8 @@ body {
 	color: white;
 	background: black;
 	overflow: hidden;
-	perspective: 160px;
+	-webkit-perspective: 160px;
+	        perspective: 160px;
 }
 
 .digital::before {
@@ -54,8 +64,11 @@ body {
 }
 
 .digital.back::after {
-	transform-origin: top center;
-	transform: rotateX(0.5turn);
+	-webkit-transform-origin: top center;
+	    -ms-transform-origin: top center;
+	        transform-origin: top center;
+	-webkit-transform: rotateX(0.5turn);
+	        transform: rotateX(0.5turn);
 	z-index: 2;
 }
 
@@ -70,24 +83,46 @@ body {
 }
 
 .flip.running .front::before {
-	transform-origin: center bottom;
-	animation: frontFlipDown 0.6s ease-in-out;
-	box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
-	backface-visibility: hidden;
+	-webkit-transform-origin: center bottom;
+	    -ms-transform-origin: center bottom;
+	        transform-origin: center bottom;
+	-webkit-animation: frontFlipDown 0.6s ease-in-out;
+	        animation: frontFlipDown 0.6s ease-in-out;
+	-webkit-box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
+	        box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
 }
 
 .flip.running .back::after {
-	animation: backFlipDown 0.6s ease-in-out;
+	-webkit-animation: backFlipDown 0.6s ease-in-out;
+	        animation: backFlipDown 0.6s ease-in-out;
+}
+
+@-webkit-keyframes frontFlipDown {
+	to {
+		-webkit-transform: rotateX(0.5turn);
+		        transform: rotateX(0.5turn);
+	}
 }
 
 @keyframes frontFlipDown {
 	to {
-		transform: rotateX(0.5turn);
+		-webkit-transform: rotateX(0.5turn);
+		        transform: rotateX(0.5turn);
+	}
+}
+
+@-webkit-keyframes backFlipDown {
+	to {
+		-webkit-transform: rotateX(0);
+		        transform: rotateX(0);
 	}
 }
 
 @keyframes backFlipDown {
 	to {
-		transform: rotateX(0);
+		-webkit-transform: rotateX(0);
+		        transform: rotateX(0);
 	}
 }
