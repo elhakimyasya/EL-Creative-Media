@@ -3,7 +3,8 @@
 *::before {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 html {
@@ -21,23 +22,36 @@ body {
 }
 
 .main {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: 100vh;
 }
 
 .center {
 	display: inherit;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .wrap {
 	margin: 2rem;
-	transform-style: preserve-3d;
-	transform: perspective(100rem);
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	-webkit-transform: perspective(100rem);
+	        transform: perspective(100rem);
 	cursor: pointer;
 }
 
@@ -52,16 +66,30 @@ body {
 	border: 1px solid var(--background-color);
 	border-radius: 1.6rem;
 	padding: 4rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: flex-end;
-	justify-content: center;
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	position: relative;
-	transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+	-webkit-transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+	        transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+	background: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, .1)), to(hsla(0, 0%, 100%, .1))), url("images/ELC.jpg");
+	background: -o-linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1)), url("images/ELC.jpg");
 	background: linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1)), url("images/ELC.jpg");
 	background-position: var(--bX) var(--bY);
 	background-size: 55rem auto;
-	box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+	-webkit-box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+	        box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+	-webkit-transition: -webkit-transform .6s 1s;
+	transition: -webkit-transform .6s 1s;
+	-o-transition: transform .6s 1s;
 	transition: transform .6s 1s;
+	transition: transform .6s 1s, -webkit-transform .6s 1s;
 }
 
 .container p {
@@ -78,6 +106,8 @@ body {
 	position: absolute;
 	z-index: 2;
 	opacity: .3;
+	-webkit-transition: .3s;
+	-o-transition: .3s;
 	transition: .3s;
 }
 
@@ -102,13 +132,17 @@ body {
 }
 
 .container-2 {
-	filter: hue-rotate(80deg) saturate(140%);
+	-webkit-filter: hue-rotate(80deg) saturate(140%);
+	        filter: hue-rotate(80deg) saturate(140%);
 }
 
 .container-3 {
-	filter: hue-rotate(160deg) saturate(140%);
+	-webkit-filter: hue-rotate(160deg) saturate(140%);
+	        filter: hue-rotate(160deg) saturate(140%);
 }
 
 .container-active {
+	-webkit-transition: none;
+	-o-transition: none;
 	transition: none;
 }
