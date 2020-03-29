@@ -1,19 +1,28 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 body {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	min-height: 100vh;
 	background-position: #353540;
 }
 
 .container {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 30px;
 	width: 100%;
@@ -26,7 +35,8 @@ body {
 	z-index: 1;
 	width: 100%;
 	padding-bottom: 150%;
-	perspective: 1000px;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
 }
 
 .cover {
@@ -37,14 +47,25 @@ body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	background-image: -o-linear-gradient(330deg, #f6d365 0%, #fda085 100%);
 	background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 	background-size: cover;
-	perspective-origin: 50% 50%;
-	transform-style: preserve-3d;
-	transform-origin: top center;
+	-webkit-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	-webkit-transform-origin: top center;
+	    -ms-transform-origin: top center;
+	        transform-origin: top center;
 	will-change: transform;
-	transform: skewX(0.0001deg);
+	-webkit-transform: skewX(0.0001deg);
+	    -ms-transform: skewX(0.0001deg);
+	        transform: skewX(0.0001deg);
+	-webkit-transition: -webkit-transform .35s ease-in-out;
+	transition: -webkit-transform .35s ease-in-out;
+	-o-transition: transform .35s ease-in-out;
 	transition: transform .35s ease-in-out;
+	transition: transform .35s ease-in-out, -webkit-transform .35s ease-in-out;
 }
 
 .cover::after {
@@ -56,18 +77,28 @@ body {
 	left: 0;
 	width: 100%;
 	height: 120%;
+	background: -o-linear-gradient(224deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 35%, rgba(255, 255, 255, 0.2) 42%, rgba(255, 255, 255, 0) 60%);
 	background: linear-gradient(226deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 35%, rgba(255, 255, 255, 0.2) 42%, rgba(255, 255, 255, 0) 60%);
-	transform: translateY(-20%);
+	-webkit-transform: translateY(-20%);
+	    -ms-transform: translateY(-20%);
+	        transform: translateY(-20%);
 	will-change: transform;
+	-webkit-transition: -webkit-transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+	transition: -webkit-transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+	-o-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
 	transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+	transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1), -webkit-transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
 }
 
 .game-card:hover .cover {
-	transform: rotateX(7deg) translateY(-6px);
+	-webkit-transform: rotateX(7deg) translateY(-6px);
+	        transform: rotateX(7deg) translateY(-6px);
 }
 
 .game-card:hover .cover::after {
-	transform: translateY(0%);
+	-webkit-transform: translateY(0%);
+	    -ms-transform: translateY(0%);
+	        transform: translateY(0%);
 }
 
 .game-card::before {
@@ -79,14 +110,24 @@ body {
 	width: 90%;
 	height: 90%;
 	background: rgba(0, 0, 0, 0.5);
-	box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+	        box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
 	will-change: opacity;
-	transform-origin: top center;
-	transform: skewX(0.001deg);
+	-webkit-transform-origin: top center;
+	    -ms-transform-origin: top center;
+	        transform-origin: top center;
+	-webkit-transform: skewX(0.001deg);
+	    -ms-transform: skewX(0.001deg);
+	        transform: skewX(0.001deg);
+	-webkit-transition: opacity .5s ease-in-out, -webkit-transform .35s ease-in-out;
+	transition: opacity .5s ease-in-out, -webkit-transform .35s ease-in-out;
+	-o-transition: transform .35s ease-in-out, opacity .5s ease-in-out;
 	transition: transform .35s ease-in-out, opacity .5s ease-in-out;
+	transition: transform .35s ease-in-out, opacity .5s ease-in-out, -webkit-transform .35s ease-in-out;
 }
 
 .game-card:hover::before {
 	opacity: 0.6;
-	transform: rotateX(7deg) translateY(-6px) scale(1.05);
+	-webkit-transform: rotateX(7deg) translateY(-6px) scale(1.05);
+	        transform: rotateX(7deg) translateY(-6px) scale(1.05);
 }
