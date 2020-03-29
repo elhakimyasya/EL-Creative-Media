@@ -2,10 +2,19 @@ body {
     background: #E8EBF3;
     height: 100vh;
     font: 400 16px 'Google Sans', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #checklist {
     --background: #ffffff;
@@ -21,19 +30,31 @@ body {
     height: var(--height);
     border-radius: var(--border-radius);
     position: relative;
-    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    -webkit-box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+            box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
     padding: 30px 45px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 30px auto;
     grid-template-columns: 30px auto;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #checklist label {
     color: var(--text);
     position: relative;
     cursor: pointer;
+    display: -ms-grid;
     display: grid;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
     transition: color .3s ease;
 }
 #checklist label::before, #checklist label::after {
@@ -46,6 +67,8 @@ body {
     left: -27px;
     background: var(--check);
     border-radius: 2px;
+    -webkit-transition: background .3s ease;
+    -o-transition: background .3s ease;
     transition: background .3s ease;
 }
 #checklist label:after {
@@ -65,8 +88,11 @@ body {
     margin: 0 15px 0 0;
     cursor: pointer;
     background: var(--background);
+    display: -ms-grid;
     display: grid;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #checklist input[type="checkbox"]::before, #checklist input[type="checkbox"]::after {
     content: "";
@@ -79,29 +105,47 @@ body {
 #checklist input[type="checkbox"]::before {
     width: 0px;
     right: 60%;
-    transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+        -ms-transform-origin: right bottom;
+            transform-origin: right bottom;
 }
 #checklist input[type="checkbox"]::after {
     width: 0px;
     left: 40%;
-    transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+        -ms-transform-origin: left bottom;
+            transform-origin: left bottom;
 }
 #checklist input[type="checkbox"]:checked::before {
-    animation: check-01 .4s ease forwards;
+    -webkit-animation: check-01 .4s ease forwards;
+            animation: check-01 .4s ease forwards;
 }
 #checklist input[type="checkbox"]:checked::after {
-    animation: check-02 .4s ease forwards;
+    -webkit-animation: check-02 .4s ease forwards;
+            animation: check-02 .4s ease forwards;
 }
 #checklist input[type="checkbox"]:checked + label {
     color: var(--disabled);
-    animation: move .3s ease .1s forwards;
+    -webkit-animation: move .3s ease .1s forwards;
+            animation: move .3s ease .1s forwards;
 }
 #checklist input[type="checkbox"]:checked + label::before {
     background: var(--disabled);
-    animation: slice .4s ease forwards;
+    -webkit-animation: slice .4s ease forwards;
+            animation: slice .4s ease forwards;
 }
 #checklist input[type="checkbox"]:checked + label::after {
-    animation: firework .5s ease forwards .1s;
+    -webkit-animation: firework .5s ease forwards .1s;
+            animation: firework .5s ease forwards .1s;
+}
+@-webkit-keyframes move {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+    100% {
+        padding-right: 4px;
+    }
 }
 @keyframes move {
     50% {
@@ -110,6 +154,17 @@ body {
     }
     100% {
         padding-right: 4px;
+    }
+}
+@-webkit-keyframes slice {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
     }
 }
 @keyframes slice {
@@ -123,60 +178,137 @@ body {
         padding-left: 0;
     }
 }
-@keyframes check-01 {
+@-webkit-keyframes check-01 {
     0% {
         width: 4px;
         top: auto;
-        transform: rotate(0);
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
     }
     50% {
         width: 0px;
         top: auto;
-        transform: rotate(0);
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
     }
     51% {
         width: 0px;
         top: 8px;
-        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
     }
     100% {
         width: 5px;
         top: 8px;
-        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+}
+@keyframes check-01 {
+    0% {
+        width: 4px;
+        top: auto;
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    50% {
+        width: 0px;
+        top: auto;
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    51% {
+        width: 0px;
+        top: 8px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+    100% {
+        width: 5px;
+        top: 8px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+}
+@-webkit-keyframes check-02 {
+    0% {
+        width: 4px;
+        top: auto;
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    50% {
+        width: 0px;
+        top: auto;
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    51% {
+        width: 0px;
+        top: 8px;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+    }
+    100% {
+        width: 10px;
+        top: 8px;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
     }
 }
 @keyframes check-02 {
     0% {
         width: 4px;
         top: auto;
-        transform: rotate(0);
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
     }
     50% {
         width: 0px;
         top: auto;
-        transform: rotate(0);
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
     }
     51% {
         width: 0px;
         top: 8px;
-        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
     }
     100% {
         width: 10px;
         top: 8px;
-        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
     }
 }
-@keyframes firework {
+@-webkit-keyframes firework {
     0% {
         opacity: 1;
-        box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+        -webkit-box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+                box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
     }
     30% {
         opacity: 1;
     }
     100% {
         opacity: 0;
-        box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+        -webkit-box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+                box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+    }
+}
+@keyframes firework {
+    0% {
+        opacity: 1;
+        -webkit-box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+                box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+                box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
     }
 }
