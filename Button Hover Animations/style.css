@@ -1,16 +1,23 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 body {
 	font-family: 'Product Sans', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin: 0;
 	min-height: 100vh;
 	background: #f3f8fa;
@@ -43,6 +50,8 @@ button.buttons {
 	width: 3rem;
 	height: 3rem;
 	position: relative;
+	-webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	-o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
@@ -51,6 +60,8 @@ button.buttons {
 }
 
 .buttons .circle .icon {
+	-webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	-o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	position: absolute;
 	top: 0;
@@ -60,6 +71,8 @@ button.buttons {
 }
 
 .buttons .circle .icon.arrow {
+	-webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	-o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	left: 0.625rem;
 	width: 1.125rem;
@@ -69,7 +82,9 @@ button.buttons {
 
 .buttons:hover .circle .icon.arrow {
 	background: #fff;
-	transform: translate(1rem, 0);
+	-webkit-transform: translate(1rem, 0);
+	    -ms-transform: translate(1rem, 0);
+	        transform: translate(1rem, 0);
 }
 
 .buttons .circle .icon.arrow::before {
@@ -81,11 +96,14 @@ button.buttons {
 	height: 0.625rem;
 	border-top: 0.125rem solid  #fff;
 	border-right: 0.125rem solid  #fff;
-	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	    transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 }
 
 .buttons .text {
+	-webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	-o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 	position: absolute;
 	top: 0;
