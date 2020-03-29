@@ -3,28 +3,69 @@ html, body {
 }
 
 body {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .spinner {
-	animation: rotations 1.4s linear infinite;
+	-webkit-animation: rotations 1.4s linear infinite;
+	        animation: rotations 1.4s linear infinite;
 }
 
 .path {
 	stroke-dasharray: 187;
 	stroke-dashoffset: 0;
-	transform-origin: center;
-	animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+	-webkit-transform-origin: center;
+	    -ms-transform-origin: center;
+	        transform-origin: center;
+	-webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+	        animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotations {
+	0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(270deg);
+		        transform: rotate(270deg);
+	}
 }
 
 @keyframes rotations {
 	0% {
-		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
 	}
 	100% {
-		transform: rotate(270deg);
+		-webkit-transform: rotate(270deg);
+		        transform: rotate(270deg);
+	}
+}
+
+@-webkit-keyframes colors {
+	0% {
+		stroke: #4285f4;
+	}
+	25% {
+		stroke: #de3e35;
+	}
+	50% {
+		stroke: #f7c223;
+	}
+	75% {
+		stroke: #1b9a59;
+	}
+	100% {
+		stroke: #4285f4;
 	}
 }
 
@@ -46,17 +87,36 @@ body {
 	}
 }
 
+@-webkit-keyframes dash {
+	0% {
+		stroke-dashoffset: 187;
+	}
+	50% {
+		stroke-dashoffset: 46.75;
+		-webkit-transform: rotate(135deg);
+		        transform: rotate(135deg);
+	}
+	100% {
+		stroke-dashoffset: 187;
+		-webkit-transform: rotate(450deg);
+		        transform: rotate(450deg);
+
+	}
+}
+
 @keyframes dash {
 	0% {
 		stroke-dashoffset: 187;
 	}
 	50% {
 		stroke-dashoffset: 46.75;
-		transform: rotate(135deg);
+		-webkit-transform: rotate(135deg);
+		        transform: rotate(135deg);
 	}
 	100% {
 		stroke-dashoffset: 187;
-		transform: rotate(450deg);
+		-webkit-transform: rotate(450deg);
+		        transform: rotate(450deg);
 
 	}
 }
