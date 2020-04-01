@@ -4,10 +4,17 @@ body {
     background-color: #a39bd2;
     min-height: 70vh;
     padding: 1rem;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: hsl(198, 1%, 29%);
     font-family: 'Gochi Hand', cursive, sans-serif;
     text-align: center;
@@ -27,18 +34,27 @@ body {
     min-height: 500px;
     max-width: 500px;
     background: #f1f5f8;
+    background-image: -o-radial-gradient(#bfc0c1 7.2%, transparent 0);
     background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
     background-size: 25px 25px;
     border-radius: 20px;
-    box-shadow: 4px 3px 7px 2px #00000040;
+    -webkit-box-shadow: 4px 3px 7px 2px #00000040;
+            box-shadow: 4px 3px 7px 2px #00000040;
     padding: 1rem;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 1rem;
 }
 
@@ -47,7 +63,9 @@ body {
 }
 
 .heading-title {
-    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+        -ms-transform: rotate(2deg);
+            transform: rotate(2deg);
     padding: 0.2rem 1.2rem;
     border-radius: 20% 5% 20% 5% / 5% 20% 25% 20%;
     background-color: hsla(166, 100%, 50%, 0.7);
@@ -60,7 +78,8 @@ body {
 }
 
 .form-input {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: transparent;
     padding: 0.7rem;
     border-bottom-right-radius: 15px 3px;
@@ -82,13 +101,20 @@ body {
 .button {
     padding: 0;
     border: none;
-    transform: rotate(4deg);
-    transform-origin: center;
+    -webkit-transform: rotate(4deg);
+        -ms-transform: rotate(4deg);
+            transform: rotate(4deg);
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
     font-family: 'Gochi Hand', cursive, sans-serif;
     text-decoration: none;
     padding-bottom: 3px;
     border-radius: 5px;
-    box-shadow: 0 2px 0 hsl(198, 1%, 29%);
+    -webkit-box-shadow: 0 2px 0 hsl(198, 1%, 29%);
+            box-shadow: 0 2px 0 hsl(198, 1%, 29%);
+    -webkit-transition: all 0.3s cubic-bezier(.175, .885, .32, 1.275);
+    -o-transition: all 0.3s cubic-bezier(.175, .885, .32, 1.275);
     transition: all 0.3s cubic-bezier(.175, .885, .32, 1.275);
     background-color: hsla(166, 100%, 50%, 0.7);
 }
@@ -103,7 +129,9 @@ body {
 
 .button:active,
 .button:focus {
-    transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+            transform: translateY(4px);
     padding-bottom: 0;
     outline: 0;
 }
