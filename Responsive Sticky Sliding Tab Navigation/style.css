@@ -1,0 +1,91 @@
+body {
+  font-family: "Google Sans", "Segoe UI", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero-tabs,
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: #eee;
+  text-align: center;
+  padding: 0 2em;
+}
+
+.hero-tabs h1,
+.slide h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.hero-tabs h3,
+.slide h3 {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.hero-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+    z-index: 10;
+}
+
+.hero-tabs-container--top {
+    position: fixed;
+    top: 0;
+}
+
+.hero-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #000;
+    transition: all .5 ease;
+    font-size: .8em;
+    font-weight: 500;
+}
+
+.hero-tab:hover {
+    color: #fff;
+    background: rgba(102, 177, 241, .8);
+    transition: all .5 ease;
+}
+
+.hero-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background: #66b1f1;
+    transition: left .3s ease;
+}
+
+@media (min-width: 800px) {
+  .hero-tabs h1,
+  .slide h1 {
+    font-size: 3rem;
+  }
+
+  .hero-tabs h3,
+  .slide h3 {
+    font-size: 1rem;
+  }
+
+  .hero-tab {
+    font-size: 1rem;
+  }
+}
