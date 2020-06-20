@@ -1,10 +1,19 @@
 html,
 body {
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 body {
@@ -28,61 +37,85 @@ body {
 
 .box-right {
     background: #e51c22;
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
 }
 
 .box-right::before {
     right: 100%;
     bottom: 0;
-    transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
 }
 
 .box-right:hover ~ .box-center {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
 }
 
 .box-left {
     background: #249b23;
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
 }
 
 .box-left::before {
     left: 100%;
-    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
 }
 
 .box-left:hover ~ .box-center {
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
 }
 
 .box-top {
     background: #04a9f3;
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
 }
 
 .box-top::before {
     top: 100%;
     right: 0;
-    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+        -ms-transform-origin: 100% 0;
+            transform-origin: 100% 0;
 }
 
 .box-top:hover ~ .box-center {
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
 }
 
 .box-bottom {
     background: #3f51b6;
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
 }
 
 .box-bottom::before {
     bottom: 100%;
     left: 0;
-    transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+            transform-origin: 0 100%;
 }
 
 .box-bottom:hover ~ .box-center {
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
 }
 
 .box-center,
@@ -95,7 +128,11 @@ body {
     height: inherit;
     text-align: center;
     line-height: inherit;
+    -webkit-transition: -webkit-transform .4s ease;
+    transition: -webkit-transform .4s ease;
+    -o-transition: transform .4s ease;
     transition: transform .4s ease;
+    transition: transform .4s ease, -webkit-transform .4s ease;
     color: #fff;
     border-radius: 100%;
 }
@@ -109,7 +146,9 @@ body {
     content: "";
     width: 70.7%;
     height: 70.7%;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .box-center:hover,
@@ -117,7 +156,9 @@ body {
 .box-left:hover,
 .box-top:hover,
 .box-bottom:hover {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
     z-index: 1;
 }
 
@@ -126,7 +167,9 @@ body {
 .box-left:hover::before,
 .box-top:hover::before,
 .box-bottom:hover::before {
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
     width: 100%;
     height: 100%;
 }
