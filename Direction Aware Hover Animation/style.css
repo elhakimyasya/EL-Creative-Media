@@ -1,0 +1,132 @@
+html,
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body {
+    font-family: "Google Sans", "Segoe UI", sans-serif;
+}
+
+.box {
+    position: relative;
+    width: 10em;
+    height: 10em;
+    line-height: 10em;
+    overflow: hidden;
+    font-weight: 700;
+    border-radius: 100%;
+}
+
+.box-center {
+    background: #683ab7;
+    z-index: -1;
+}
+
+.box-right {
+    background: #e51c22;
+    transform: translateX(100%);
+}
+
+.box-right::before {
+    right: 100%;
+    bottom: 0;
+    transform-origin: 100% 100%;
+}
+
+.box-right:hover ~ .box-center {
+    transform: translateX(-100%);
+}
+
+.box-left {
+    background: #249b23;
+    transform: translateX(-100%);
+}
+
+.box-left::before {
+    left: 100%;
+    transform-origin: 0 0;
+}
+
+.box-left:hover ~ .box-center {
+    transform: translateX(100%);
+}
+
+.box-top {
+    background: #04a9f3;
+    transform: translateY(-100%);
+}
+
+.box-top::before {
+    top: 100%;
+    right: 0;
+    transform-origin: 100% 0;
+}
+
+.box-top:hover ~ .box-center {
+    transform: translateY(100%);
+}
+
+.box-bottom {
+    background: #3f51b6;
+    transform: translateY(100%);
+}
+
+.box-bottom::before {
+    bottom: 100%;
+    left: 0;
+    transform-origin: 0 100%;
+}
+
+.box-bottom:hover ~ .box-center {
+    transform: translateY(-100%);
+}
+
+.box-center,
+.box-right,
+.box-left,
+.box-top,
+.box-bottom {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    line-height: inherit;
+    transition: transform .4s ease;
+    color: #fff;
+    border-radius: 100%;
+}
+
+.box-center:before,
+.box-right:before,
+.box-left:before,
+.box-top:before,
+.box-bottom:before {
+    position: absolute;
+    content: "";
+    width: 70.7%;
+    height: 70.7%;
+    transform: rotate(45deg);
+}
+
+.box-center:hover,
+.box-right:hover,
+.box-left:hover,
+.box-top:hover,
+.box-bottom:hover {
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.box-center:hover::before,
+.box-right:hover::before,
+.box-left:hover::before,
+.box-top:hover::before,
+.box-bottom:hover::before {
+    transform: none;
+    width: 100%;
+    height: 100%;
+}
