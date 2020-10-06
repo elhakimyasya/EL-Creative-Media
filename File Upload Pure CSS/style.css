@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2e44ff;
+  --primary-accent: #e9e5ff;
+  --text-primary: #0d0f21;
+  --text-secondary: #6a6b76;
+  --bg-primary: #d0d1de;
+  --secondary: #e5e5e5;
+}
+
+body {
+  font-family: 'Google Sans', 'Segoe UI', Arial sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.5;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+.modal {
+  width: 98%;
+  max-width: 500px;
+  margin: 10vh auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.logo-circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--primary-accent);
+}
+
+.logo-circle svg {
+  max-width: 1.5rem;
+  fill: var(--primary);
+}
+
+.btn-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  background-color: var(--primary-accent);
+}
+
+.modal-body {
+  padding: 1rem 1.5rem;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-desc {
+  color: var(--text-secondary);
+}
+
+.upload-area {
+  margin-top: 1.25rem;
+  border: 2px solid var(--secondary);
+  border-style: dashed;
+  border-width: 4px;
+  background-color: transparent;
+  padding: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.upload-area:hover,
+.upload-area:focus {
+  border-color: var(--primary);
+}
+
+.upload-icon svg {
+  fill: var(--primary);
+}
+
+.upload-title {
+  margin: 1rem;
+  display: block;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.upload-desc {
+  color: var(--text-secondary);
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn {
+  margin-left: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--secondary);
+  border-radius: 0.25rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal-footer .btn:last-child {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
